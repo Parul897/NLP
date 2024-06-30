@@ -1,0 +1,74 @@
+echo "# NLP" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Parul897/NLP.git
+git push -u origin main
+
+
+pip install nltk
+
+import nltk
+nltk.__version__
+
+import nltk
+nltk.download('wordnet')
+from nltk.corpus import wordnet
+
+import nltk
+from nltk.tokenize import word_tokenize, sent_tokenize
+
+# Sample text for tokenization
+text = "NLTK is a part of Natural language Processing (NLP). Field of Artificial intelligence."
+
+# Word tokenization
+word_tokens = word_tokenize(text)
+print("Word Tokens:")
+print(word_tokens)
+
+# Sentence tokenization
+sentence_tokens = sent_tokenize(text)
+print("\nSentence Tokens:")
+for sentence in sentence_tokens:
+    print(sentence)
+
+import nltk
+nltk.download('vader_lexicon')
+
+import nltk
+from nltk.sentiment import SentimentIntensityAnalyzer
+
+# Sample text data
+text_data = [
+    "I love this subject! It's amazing.",
+    "The services are Machine Translation, Text Summarization and Speech Recognition",
+    "NLP has a vast array of applications across various industries."
+]
+
+
+# Initialize the Sentiment Intensity Analyzer
+sia = SentimentIntensityAnalyzer()
+
+# Analyze sentiment for each text
+for text in text_data:
+    sentiment_scores = sia.polarity_scores(text)
+    print(f"Text: {text}")
+    print(f"Sentiment Scores: {sentiment_scores}")
+    print("-" * 40)
+
+# Interpret sentiment scores
+def interpret_sentiment(score):
+    if score['compound'] > 0.05:
+        return "Positive"
+    elif score['compound'] < -0.05:
+        return "Negative"
+    else:
+      def sentiment_analysis(text):
+        if text == "Positive":
+          return "Positive"
+        elif text == "Negative":
+            return "Negative"
+        else:
+              return "Neutral"
+# Print interpreted sentiment
